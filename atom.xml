@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-30T17:30:00.626Z</updated>
+  <updated>2021-01-31T06:50:44.429Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CVE-2017-7494</title>
+    <link href="http://example.com/2021/01/31/CVE-2017-7494/"/>
+    <id>http://example.com/2021/01/31/CVE-2017-7494/</id>
+    <published>2021-01-31T06:46:58.000Z</published>
+    <updated>2021-01-31T06:50:44.429Z</updated>
+    
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    
+    <category term="Vulnerabilities" scheme="http://example.com/tags/Vulnerabilities/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
