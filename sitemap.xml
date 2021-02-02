@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2021/02/02/ctfshow-web%E5%85%A5%E9%97%A8-29-40/</loc>
+    
+    <lastmod>2021-02-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2021/02/01/BUUCTF-NiZhuanSiWei-writeup/</loc>
     
     <lastmod>2021-02-01</lastmod>
@@ -46,7 +53,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -54,28 +61,35 @@
   
   <url>
     <loc>http://example.com/tags/Linux/</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/upload/</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/BUUCTF/</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/WEB/</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/ctfshow/</loc>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -84,14 +98,14 @@
   
   <url>
     <loc>http://example.com/categories/Vulnerabilities/</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://example.com/categories/CTF/</loc>
-    <lastmod>2021-02-01</lastmod>
+    <lastmod>2021-02-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
