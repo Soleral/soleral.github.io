@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-02-05T15:12:03.648Z</updated>
+  <updated>2021-02-13T09:23:53.728Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BUU CODE REVIEW</title>
+    <link href="http://example.com/2021/02/13/BUU-CODE-REVIEW/"/>
+    <id>http://example.com/2021/02/13/BUU-CODE-REVIEW/</id>
+    <published>2021-02-13T08:51:02.000Z</published>
+    <updated>2021-02-13T09:23:53.728Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">highlight_file(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BUU</span> </span>&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="variable">$correct</span> = <span class="string">&quot;&quot;</span>;</span><br><span class="line">   <span class="keyword">public</span> <span class="variable">$input</span> = <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           <span class="keyword">$this</span>-&gt;correct = base64_encode(uniqid());</span><br><span class="line">           <span class="keyword">if</span>(<span class="keyword">$this</span>-&gt;correct === <span class="keyword">$this</span>-&gt;input) &#123;</span><br><span class="line">               <span class="keyword">echo</span> file_get_contents(<span class="string">&quot;/flag&quot;</span>);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125; <span class="keyword">catch</span> (<span class="built_in">Exception</span> <span class="variable">$e</span>) &#123;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;pleaseget&#x27;</span>] === <span class="string">&#x27;1&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;pleasepost&#x27;</span>] === <span class="string">&#x27;2&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(md5(<span class="variable">$_POST</span>[<span class="string">&#x27;md51&#x27;</span>]) == md5(<span class="variable">$_POST</span>[<span class="string">&#x27;md52&#x27;</span>]) &amp;&amp; <span class="variable">$_POST</span>[<span class="string">&#x27;md51&#x27;</span>] != <span class="variable">$_POST</span>[<span class="string">&#x27;md52&#x27;</span>]) &#123;</span><br><span class="line">            unserialize(<span class="variable">$_POST</span>[<span class="string">&#x27;obj&#x27;</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>分析源代码</p><h1 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h1><ul><li>get、post传参</li><li>md5弱匹配，或者是md5数组绕过</li><li>php反序列化</li><li>uniqid() 函数基于以微秒计的当前时间，生成一个唯一的 ID。</li></ul><h1 id="md5弱匹配"><a href="#md5弱匹配" class="headerlink" title="md5弱匹配"></a>md5弱匹配</h1><p>php的==判断两个变量时，它把每一个以”0e”开头的哈希值都解释为0，所以如果两个不同的密码经过哈希以后，其哈希值都是以”0e”开头的，那么PHP将会认为他们相同，都是0。可以用字符串QNKCDZO、314282422绕过</p><h1 id="php反序列化"><a href="#php反序列化" class="headerlink" title="php反序列化"></a>php反序列化</h1><p>可以在本地测试correct的值。</p><p><img src="/img/BUUCTF/BUU-CODE-REVIEW/1.png" alt="1.png"></p><p>得到correct=2</p><p>然后传递变量就可以得到flag</p><p><img src="/img/BUUCTF/BUU-CODE-REVIEW/2.jpg" alt="2.jpg"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;源码&quot;&gt;&lt;a href=&quot;#源码&quot; class=&quot;headerlink&quot; title=&quot;源码&quot;&gt;&lt;/a&gt;源码&lt;/h1&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span clas</summary>
+      
+    
+    
+    
+    <category term="CTF" scheme="http://example.com/categories/CTF/"/>
+    
+    
+    <category term="BUUCTF" scheme="http://example.com/tags/BUUCTF/"/>
+    
+    <category term="WEB" scheme="http://example.com/tags/WEB/"/>
+    
+  </entry>
   
   <entry>
     <title>upload-labs 通关笔记</title>
